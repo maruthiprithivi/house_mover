@@ -1,0 +1,29 @@
+[project]
+name = "House_Mover"
+version = "0.0.1a"
+description = "CLI utility for moving houses, JK! utility for moving tables and more"
+dependencies = [
+    "click>=8.1.8",
+    "python-dotenv==1.0.1",
+    "clickhouse-connect==0.8.11",
+    "rich==13.9.4"
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff==0.8.4",
+    "build==1.2.2.post1"
+]
+
+
+[project.scripts]
+mover = "mover.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["mover*"]
+
+
+[build-system]
+requires = ["setuptools>=75.6.0", "wheel>=0.45.1"]
+build-backend = "setuptools.build_meta"
